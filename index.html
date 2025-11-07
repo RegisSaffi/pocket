@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Short Pocket - Your go-to app for managing and tracking mobile money transactions effortlessly.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Short Pocket">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Short Pocket</title>
+  <link rel="manifest" href="manifest.json">
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.6px, transparent 1.6px);
+      background-size: 30px 30px;
+      background-position: 0 0;
+    }
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .logo-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 4px;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: logoFloat 3s ease-in-out infinite;
+      box-shadow: none;
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      opacity: 0;
+      animation: logoPulse 2s ease-in-out infinite;
+    }
+
+    .logo-icon {
+      width: 60%;
+      height: 60%;
+      position: relative;
+      z-index: 1;
+      animation: iconPop 1.5s ease-in-out infinite;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-20px) scale(1.05); }
+    }
+
+    @keyframes logoPulse {
+      0% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.3); opacity: 0; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    @keyframes iconPop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .loader-text {
+      font-family: 'Titan One', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: #667eea;
+      margin-bottom: 12px;
+      animation: textFade 2s ease-in-out infinite;
+      text-transform: none;
+      letter-spacing: 1px;
+    }
+
+    @keyframes textFade {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .loader-subtitle {
+      font-size: 14px;
+      color: #717E95;
+      animation: subtitleFade 2.5s ease-in-out infinite;
+    }
+
+    @keyframes subtitleFade {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+
+    #flutter-app {
+      display: none;
+    }
+
+    .loading-container.hidden {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+
+    #flutter-app.visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-container" id="loading">
+    <div class="logo-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="icons/Icon-192.png" alt="Short Pocket" />
+        </div>
+      </div>
+    </div>
+    <div class="loader-text">Short Pocket</div>
+  </div>
+
+  <div id="flutter-app">
+    <script src="flutter_bootstrap.js" async></script>
+  </div>
+
+  <script>
+    // Wait for Flutter to be ready
+    window.addEventListener('flutter-first-frame', function () {
+      const loading = document.getElementById('loading');
+      const app = document.getElementById('flutter-app');
+      
+      loading.classList.add('hidden');
+      setTimeout(() => {
+        loading.style.display = 'none';
+        app.classList.add('visible');
+      }, 500);
+    });
+  </script>
+</body>
+</html>
