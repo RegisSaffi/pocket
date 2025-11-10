@@ -1,0 +1,31 @@
+{
+  "appName": "Short Pocket",
+  "description": "This is my app description",
+  "items": [
+    {
+      "version": "1.0.2",
+      "shortVersion": 2,
+      "changes": [
+        {
+          "type": "chore",
+          "message": "Introducing Short Pocket for MacOS"
+        },
+        {
+          "type": "chore",
+          "message": "Redesigned the UI to feel more modern and responsive."
+        },
+        {
+          "type": "feat",
+          "message": "Added more agent transactions support"
+        },
+        {
+          "message": "Fixed a lot of bugs related to the latest changes in messages formats."
+        }
+      ],
+      "date": "2025-11-10",
+      "mandatory": true,
+      "url": "https://regissaffi.github.io/assets/1.0.2%2B2-macos",
+    "platform": "macos"
+    }
+  ]
+}

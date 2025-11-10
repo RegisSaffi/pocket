@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Short Pocket</title>
+        <item>
+            <title>Version 1.0.2</title>
+            <description>
+                Fixed bugs and improved performance:
+                - Optimized spending charts.
+                - Added more agent transactions support.
+                - Fixed a lot of bugs related to the latest changes in messages formats.
+            </description>
+            <pubDate>Sat, 09 Nov 2025 12:00:00 +0000</pubDate>
+            <enclosure
+                url="https://github.com/RegisSaffi/pocket/releases/download/short/app-release.apk"
+                version="1.0.2+2" />
+        </item>
+    </channel>
+</rss>
