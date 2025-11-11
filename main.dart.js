@@ -120080,7 +120080,7 @@ $S:4}
 A.IO.prototype={
 ab(){return A.bwM()}}
 A.ad5.prototype={
-aB(){A.bph(A.eq("https://regissaffi.github.io/assets/desktop-archive.json",0,null))
+aB(){A.bph(A.eq("https://regissaffi.github.io/pocket/assets/desktop-archive.json",0,null))
 this.aM()},
 IW(){var s=0,r=A.H(t.H),q=this,p
 var $async$IW=A.D(function(a,b){if(a===1)return A.E(b,r)
