@@ -3,8 +3,8 @@
   "description": "This is my app description",
   "items": [
     {
-      "version": "1.0.3",
-      "shortVersion": 3,
+      "version": "1.0.1",
+      "shortVersion": 1,
       "changes": [
         {
           "type": "chore",
