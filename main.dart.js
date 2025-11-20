@@ -123409,14 +123409,14 @@ ga7Q(){return"Aper\xe7us"}}
 A.nq.prototype={
 ia(){return A.V(["deviceId",this.a,"model",this.c,"name",this.b],t.N,t.z)}}
 A.a4T.prototype={
-a6y(a9){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this,a0=null,a1="Fee was ([0-9]+) RWF",a2="1",a3="Financial Transaction Id: (\\d+)",a4="TxId:(\\d+)",a5=a.pU(a9),a6=A.aH("(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})",!0,!1,!1).cf(a9),a7=a6==null?a0:a6.b[1],a8=a7==null?"Date not found":a7
+a6y(a9){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this,a0=null,a1="1",a2="Financial Transaction Id: (\\d+)",a3="(?:Fee paid:|Fee:) (\\d+) RWF",a4="TxId:(\\d+)",a5=a.pU(a9),a6=A.aH("(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})",!0,!1,!1).cf(a9),a7=a6==null?a0:a6.b[1],a8=a7==null?"Date not found":a7
 if(a5===B.os){s=A.aH("(?:TxId: ?|FT Id: )(\\d+)",!0,!1,!1)
 r=A.aH("payment of ([0-9,]+) RWF to (.+?) (\\d+)",!0,!1,!1)
 q=A.aH("payment of ([0-9,]+) RWF",!0,!1,!1)
-p=A.aH(a1,!0,!1,!1)
+p=A.aH("(?:Fee was|Fee) (\\d+) RWF",!0,!1,!1)
 o=B.d.m(a9,"Airtime")||B.d.m(a9,"Bundles and Packs")
 n=B.d.m(a9,"Cash Power")
-if(B.d.m(a9,"with token")){s=A.aH("External Transaction Id: (\\S+)",!0,!1,!1)
+if(B.d.m(a9,"with token")){s=A.aH("(?:External Transaction Id:|ET Id:) (\\S+)",!0,!1,!1)
 r=A.aH("payment of ([0-9,]+) RWF to (.+?) with token (.+?)",!0,!1,!1)}a6=s.cf(a9)
 m=a6==null?a0:a6.b[1]
 if(m==null)m=""
@@ -123436,13 +123436,13 @@ a6=a.pU(a9)
 h=A.vy(a8)
 if(h==null)h=new A.b4(Date.now(),0,!1)
 g=o||n?"":k
-f=new A.bX(a6,B.ae,m,h,l,g,"",a2,a.k9(j),a.k9(i),B.c7,a0)
+f=new A.bX(a6,B.ae,m,h,l,g,"",a1,a.k9(j),a.k9(i),B.c7,a0)
 e=A.b([],t.s)
 if(o)e.push("Airtime")
 if(n)e.push("Electricity")
 f.z=e
 f.r=A.yB(l,g)
-return f}else if(a5===B.ou){s=A.aH(a3,!0,!1,!1)
+return f}else if(a5===B.ou){s=A.aH(a2,!0,!1,!1)
 r=A.aH("transferred to (.+?) \\((\\d+)\\)",!0,!1,!1)
 q=A.aH("([0-9,]+) RWF",!0,!1,!1)
 p=A.aH("Fee(?: was:| :) ([0-9]+) RWF",!0,!1,!1)
@@ -123464,15 +123464,15 @@ if(i==null)i=""
 a6=a.pU(a9)
 h=A.vy(a8)
 if(h==null)h=new A.b4(Date.now(),0,!1)
-f=new A.bX(a6,B.ae,m,h,l,k,"",a2,a.k9(j),a.k9(i),B.c7,a0)
+f=new A.bX(a6,B.ae,m,h,l,k,"",a1,a.k9(j),a.k9(i),B.c7,a0)
 f.r=A.yB(l,k)
-return f}else if(a5===B.ot){s=A.aH(a3,!0,!1,!1)
+return f}else if(a5===B.ot){s=A.aH(a2,!0,!1,!1)
 d=A.aH("FT Id: (\\d+)",!0,!1,!1)
 q=A.aH("A transaction of ([0-9,]+) RWF by (.+?)",!0,!1,!1)
 r=A.aH("A transaction of (\\d+) RWF by (.+?) on your MOMO account",!0,!1,!1)
 c=A.aH("A transaction of (\\d+) RWF by (.+?) was completed",!0,!1,!1)
 b=A.aH("Message from debit receiver: (.+?)\\.",!0,!1,!1)
-p=A.aH(a1,!0,!1,!1)
+p=A.aH("Fee was ([0-9]+) RWF",!0,!1,!1)
 a6=s.cf(a9)
 a6=a6==null?a0:a6.b[1]
 if(a6==null){a6=d.cf(a9)
@@ -123497,14 +123497,14 @@ if(i==null)i=""
 a6=a.pU(a9)
 h=A.vy(a8)
 if(h==null)h=new A.b4(Date.now(),0,!1)
-f=new A.bX(a6,B.ae,m,h,l,k,"",a2,a.k9(j),a.k9(i),B.c7,a0)
+f=new A.bX(a6,B.ae,m,h,l,k,"",a1,a.k9(j),a.k9(i),B.c7,a0)
 f.r=A.yB(l,l)
 return f}else if(a5===B.ov)return a.a6x(a9,a8)
 else if(a5===B.kv)return a.a6x(a9,a8)
 else if(B.d.m(a9,"withdrawn")){s=A.aH(u.o,!0,!1,!1)
-r=A.aH("via agent: (.+?) \\((\\d+)\\), withdrawn",!0,!1,!1)
+r=A.aH("via agent: (.+?)(?: -)? \\((.+?)\\), withdrawn",!0,!1,!1)
 q=A.aH("withdrawn (\\d+) RWF",!0,!1,!1)
-p=A.aH("Fee paid: (\\d+) RWF",!0,!1,!1)
+p=A.aH(a3,!0,!1,!1)
 if(B.d.bS(a9,"*")){s=A.aH(a4,!0,!1,!1)
 r=A.aH("via agent: (.+?) \\((\\d+)\\)",!0,!1,!1)}a6=s.cf(a9)
 m=a6==null?a0:a6.b[1]
@@ -123525,12 +123525,12 @@ a6=a.pU(a9)
 h=A.vy(a8)
 if(h==null)h=new A.b4(Date.now(),0,!1)
 g=A.dj(l,"-","")
-f=new A.bX(a6,B.ae,m,h,g,k,"",a2,a.k9(j),a.k9(i),B.c7,a0)
+f=new A.bX(a6,B.ae,m,h,g,k,"",a1,a.k9(j),a.k9(i),B.c7,a0)
 f.r=A.yB(g,k)
 return f}else if(a5===B.ow){s=A.aH(a4,!0,!1,!1)
 r=A.aH("to (.+?) \\((\\d+)\\)",!0,!1,!1)
 q=A.aH("cashed in ([0-9,]+) RWF",!0,!1,!1)
-p=A.aH("Fee was: ([0-9]+) RWF",!0,!1,!1)
+p=A.aH("(?:Fee was:|Fee:) (\\d+) RWF",!0,!1,!1)
 a5=a.pU(a9)
 a6=s.cf(a9)
 m=a6==null?a0:a6.b[1]
@@ -123549,12 +123549,12 @@ i=a6==null?a0:a6.b[1]
 if(i==null)i=""
 a6=A.vy(a8)
 if(a6==null)a6=new A.b4(Date.now(),0,!1)
-f=new A.bX(a5,B.bE,m,a6,l,k,"",a2,a.k9(j),a.k9(i),B.c7,a0)
+f=new A.bX(a5,B.bE,m,a6,l,k,"",a1,a.k9(j),a.k9(i),B.c7,a0)
 f.r=A.yB(l,k)
 return f}else if(a5===B.ox){s=A.aH(a4,!0,!1,!1)
 r=A.aH("cash to (.+?), id: (\\d+)",!0,!1,!1)
 q=A.aH("amount: ([0-9,]+) RWF",!0,!1,!1)
-p=A.aH("Fee paid: ([0-9]+) RWF",!0,!1,!1)
+p=A.aH(a3,!0,!1,!1)
 a5=a.pU(a9)
 a6=s.cf(a9)
 m=a6==null?a0:a6.b[1]
@@ -123573,7 +123573,7 @@ i=a6==null?a0:a6.b[1]
 if(i==null)i=""
 a6=A.vy(a8)
 if(a6==null)a6=new A.b4(Date.now(),0,!1)
-f=new A.bX(a5,B.ae,m,a6,l,k,"",a2,a.k9(j),a.k9(i),B.c7,a0)
+f=new A.bX(a5,B.ae,m,a6,l,k,"",a1,a.k9(j),a.k9(i),B.c7,a0)
 f.r=A.yB(l,k)
 return f}else return a0},
 pU(a){if(B.d.m(a,"failed"))return B.ff
