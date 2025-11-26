@@ -22,7 +22,7 @@
           "message": "Fixed a lot of bugs related to the latest changes in messages formats."
         }
       ],
-      "date": "2025-11-10",
+      "date": "2025-11-20",
       "mandatory": true,
       "url": "https://regissaffi.github.io/pocket/assets/1.0.3%2B3-macos",
     "platform": "macos"
